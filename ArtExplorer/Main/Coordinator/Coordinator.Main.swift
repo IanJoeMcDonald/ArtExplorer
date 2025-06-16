@@ -38,7 +38,12 @@ extension Coordinator {
         func trigger(_ route: Route) {
             switch route {
             case let .detail(objectId):
-                let viewModel = Flow.Main.Detail.ViewModel(coordinator: self, worker: worker)
+                let viewModel = Flow.Main.Detail.ViewModel(
+                    objectId: objectId,
+                    coordinator: self,
+                    worker: worker,
+                    persistenceWorker: .init()
+                )
                 let viewController = Flow.Main.Detail.ViewController(viewModel: viewModel)
                 navigationController.pushViewController(viewController, animated: true)
             case let .error(title, message, buttonTitle):

@@ -11,9 +11,10 @@ extension Model.Core {
 
     enum SystemImage: String {
 
-        case favorite = "star"
+        case backButton = "chevron.left"
+        case favorite = "heart"
+        case favoriteFill = "heart.fill"
         case list = "house"
-        case search = "magnifyingglass"
 
         var image: UIImage {
             UIImage(systemName: rawValue) ?? UIImage()
