@@ -13,5 +13,6 @@ extension Localization.Main.TabBar {
 
         // MARK: Strings
         static let tabTitle = String(localized: "Favorites", table: "Localization.Main")
+        static let emptyTitle = String(localized: "No favorites?\nAdd some from the main screen", table: "Localization.Main")
     }
 }

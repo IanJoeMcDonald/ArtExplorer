@@ -20,6 +20,16 @@
           }
         }
       }
+    },
+    "No favorites?\nAdd some from the main screen" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não tem favoritos?\nAdicione alguns da tela principal"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

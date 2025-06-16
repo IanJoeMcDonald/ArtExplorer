@@ -18,6 +18,7 @@ extension Flow.Main {
             super.init(nibName: nil, bundle: nil)
         }
 
+        @available(*, unavailable)
         required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
         // MARK: Properties
@@ -63,8 +64,12 @@ extension Flow.Main {
             return viewController
         }
 
-        private func createFavoritesTab() -> UINavigationController {
-            let viewModel = Flow.Main.TabBar.Favorites.ViewModel(coordinator: coordinator, worker: worker)
+        private func createFavoritesTab() -> UIViewController {
+            let viewModel = Flow.Main.TabBar.Favorites.ViewModel(
+                coordinator: coordinator,
+                worker: worker,
+                persistenceWorker: .init()
+            )
             let viewController = Flow.Main.TabBar.Favorites.ViewController(viewModel: viewModel)
             viewController.tabBarItem = UITabBarItem(
                 title: Localization.Main.TabBar.Favorites.tabTitle,
@@ -72,7 +77,7 @@ extension Flow.Main {
                 tag: 1
             )
 
-            return UINavigationController(rootViewController: viewController)
+            return viewController
         }
     }
 }
