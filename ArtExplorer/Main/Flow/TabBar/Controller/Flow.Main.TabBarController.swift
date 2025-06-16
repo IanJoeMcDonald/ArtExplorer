@@ -51,7 +51,7 @@ extension Flow.Main {
             UITabBar.appearance().scrollEdgeAppearance = tabAppearance
         }
 
-        private func createListTab() -> UINavigationController {
+        private func createListTab() -> UIViewController {
             let viewModel = Flow.Main.TabBar.List.ViewModel(coordinator: coordinator, worker: worker)
             let viewController = Flow.Main.TabBar.List.ViewController(viewModel: viewModel)
             viewController.tabBarItem = UITabBarItem(
@@ -60,7 +60,7 @@ extension Flow.Main {
                 tag: 0
             )
 
-            return UINavigationController(rootViewController: viewController)
+            return viewController
         }
 
         private func createFavoritesTab() -> UINavigationController {
