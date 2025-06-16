@@ -15,4 +15,4 @@ protocol CoordinatorProtocol {
     func start()
 }
 
-protocol CoordinatorRoute { }
+protocol CoordinatorRoute: Equatable { }
