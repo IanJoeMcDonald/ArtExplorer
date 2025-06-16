@@ -30,7 +30,6 @@ extension Endpoint {
         var urlComponents = URLComponents(string: self.path)
         urlComponents?.queryItems = self.queryItems.map { key, value in URLQueryItem(name: key, value: value) }
         guard let url = urlComponents?.url else { throw URLError(.badURL) }
-        print(url)
         return url
     }
 }
